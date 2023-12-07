@@ -14,7 +14,7 @@ class Collectible extends GameObject {
   // - x and y coordinates
   // - width and height of the collectible
   // - color of the collectible, which defaults to 'gold' if not specified
-  constructor(x, y, width, height, color = 'gold') {
+  constructor(x, y, width, height, color = 'black') {
     
     // Call the constructor of the superclass (GameObject) with the x and y coordinates
     super(x, y);

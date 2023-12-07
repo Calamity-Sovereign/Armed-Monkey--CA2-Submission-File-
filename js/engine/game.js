@@ -27,8 +27,8 @@ class Game {
 
   // This method resizes the canvas to fill the window, with a small margin.
   resizeCanvas() {
-    this.canvas.width = window.innerWidth - 50;
-    this.canvas.height = window.innerHeight - 50;
+    this.canvas.width = window.innerWidth - 20;
+    this.canvas.height = window.innerHeight - 20;
   }
 
   // This method starts the game loop.
@@ -36,7 +36,7 @@ class Game {
     this.isRunning = true;
     requestAnimationFrame((timestamp) => this.gameLoop(timestamp));
   }
-
+  
   // The main game loop, which is called once per frame.
   gameLoop(currentFrameTime) {
     // Calculate the time passed since the last frame.
