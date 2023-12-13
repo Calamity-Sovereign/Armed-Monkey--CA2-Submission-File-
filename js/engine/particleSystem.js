@@ -40,9 +40,9 @@ class ParticleSystem extends GameObject {
     // Emit the calculated number of particles.
     for (let i = 0; i < particlesToEmit && this.particlesEmitted < this.count; i++) {
       // Create a new particle with a random life duration, size, and initial velocity.
-      const lifeDuration = this.lifeDuration + Math.random() - 0.5;
+      const lifeDuration = this.lifeDuration + Math.random() - 2.0;
       const particle = new Particle(this.x, this.y, Math.random() * 5, Math.random() * 5, this.color, lifeDuration);
-      particle.addComponent(new Physics({ x: (Math.random() - 0.5) * 50, y: (Math.random() - 0.5) * 50 }, { x: 0, y: 0 }));
+      particle.addComponent(new Physics({ x: (Math.random() - 2.0) * 50, y: (Math.random() - 2.0) * 50 }, { x: 0, y: 0 }));
       // Add the particle to the game.
       this.game.addGameObject(particle);
       // Increase the count of particles emitted.
