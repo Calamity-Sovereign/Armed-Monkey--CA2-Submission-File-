@@ -15,7 +15,7 @@ class Level extends Game {
     super(canvasId);
     
     // Create a player object and add it to the game
-    const player = new Player(this.canvas.width / 2 - 25, this.canvas.height / 2 - 25);
+    const player = new Player(0,-70);
     this.addGameObject(player);
     
     // Add the player UI object to the game
@@ -25,16 +25,26 @@ class Level extends Game {
     this.camera.target = player;
 
     // Define the platform's width and the gap between platforms
-    const platformWidth = 20000;
-    const gap = 100;
+    const platformWidth = 200;
+    const gap = 165;
 
     // Create platforms and add them to the game
     const platforms = [
-      new Platform(0, this.canvas.height - 10, platformWidth, 30),
-      //new Platform(platformWidth + gap, this.canvas.height - 20, platformWidth, 20),
-      //new Platform(2 * (platformWidth + gap), this.canvas.height - 20, platformWidth, 20),
+      //new Platform(0, this.canvas.height - 20, platformWidth, 600),
+      //new Platform(platformWidth + gap, this.canvas.height - 20, platformWidth, 600),
+      //new Platform(2 * (platformWidth + gap), this.canvas.height - 20, platformWidth, 600),
       //new Platform(3 * (platformWidth + gap), this.canvas.height - 20, platformWidth, 20),
       //new Platform(4 * (platformWidth + gap), this.canvas.height - 20, platformWidth, 20),
+
+        new Platform(-5000.0, -500.0, 5000.0, 1000.0, "rgb(128, 64, 64)", "platform"),
+        new Platform(0.0, 21.0, 900.0, 500.0, "rgb(128, 64, 64)", "platform"),
+        new Platform(1111, 26, 100.0, 100.0, "rgb(128, 64, 64)", "platform"),
+        new Platform(1387, 26, 100.0, 1000.0, "rgb(128, 64, 64)", "platform"),
+        new Platform(1676.0, 27.0, 700.0, 500.0, "rgb(128, 64, 64)", "platform"),
+        new Platform(2474, 183.0, 100, 100, "rgb(128, 64, 64)", "platform"),
+        new Platform(2792, 405, 100, 100, "rgb(128, 64, 64)", "platform"),
+        new Platform(2569, 694, 100, 100, "rgb(128, 64, 64)", "platform"),
+        new Platform(1554, 897, 900, 100, "rgb(128, 64, 64)", "platform"),
     ];
     for (const platform of platforms) {
       this.addGameObject(platform);
@@ -55,3 +65,17 @@ class Level extends Game {
 
 // Export the Level class as the default export of this module
 export default Level;
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////

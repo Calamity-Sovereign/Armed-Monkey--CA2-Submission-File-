@@ -189,8 +189,8 @@ class Player extends GameObject {
 
   resetPlayerState() {
     // Reset the player's state, repositioning it and nullifying movement
-    this.x = this.game.canvas.width / 2;
-    this.y = this.game.canvas.height / 2;
+    this.x =  0;
+    this.y = -70;
     this.getComponent(Physics).velocity = { x: 0, y: 0 };
     this.getComponent(Physics).acceleration = { x: 0, y: 0 };
     this.direction = 1;
