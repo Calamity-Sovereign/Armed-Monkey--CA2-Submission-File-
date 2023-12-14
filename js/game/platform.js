@@ -8,7 +8,7 @@ class Platform extends GameObject {
   
   // Define the constructor for the Platform class. It takes arguments for the x and y coordinates,
   // width, height, and color (with a default value of 'gray' if no color is provided)
-  constructor(x, y, width, height, color = 'blue') {
+  constructor(x, y, width, height, color = 'light brown') {
     
     // Call the constructor of the superclass (GameObject) with the x and y coordinates
     super(x, y);
