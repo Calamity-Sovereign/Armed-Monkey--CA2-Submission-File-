@@ -124,7 +124,7 @@ class Player extends GameObject {
     }
 
     // Check if player has collected all collectibles
-    if (this.score >= 3) {
+    if (this.score >= 9) {
       console.log('You win!');
       location.reload();
     }
