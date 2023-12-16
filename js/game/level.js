@@ -36,11 +36,11 @@ class Level extends Game {
       //new Platform(3 * (platformWidth + gap), this.canvas.height - 20, platformWidth, 20),
       //new Platform(4 * (platformWidth + gap), this.canvas.height - 20, platformWidth, 20),
 
-        new Platform(-5000.0, -500.0, 5000.0, 1000.0, "rgb(128, 64, 64)", "platform"),
-        new Platform(0.0, 21.0, 900.0, 500.0, "rgb(128, 64, 64)", "platform"),
-        new Platform(1111, 26, 100.0, 100.0, "rgb(128, 64, 64)", "platform"),
-        new Platform(1387, 26, 100.0, 1000.0, "rgb(128, 64, 64)", "platform"),
-        new Platform(1676.0, 27.0, 700.0, 500.0, "rgb(128, 64, 64)", "platform"),
+        new Platform(-5000.0, -500.0, 5000.0, 1000.0, "rgb(128, 64, 64)", "platform"),// back platform
+        new Platform(0.0, 21.0, 900.0, 500.0, "rgb(128, 64, 64)", "platform"), // starting platform
+        new Platform(1111, 26, 100.0, 100.0, "rgb(128, 64, 64)", "platform"), ///small platform
+        new Platform(1387, 26, 100.0, 100.0, "rgb(128, 64, 64)", "platform"),  //small platform
+        new Platform(1676.0, 27.0, 700.0, 300.0, "rgb(128, 64, 64)", "platform"),
         new Platform(2474, 183.0, 100, 100, "rgb(128, 64, 64)", "platform"),
         new Platform(2792, 405, 100, 100, "rgb(128, 64, 64)", "platform"),
         new Platform(2569, 694, 100, 100, "rgb(128, 64, 64)", "platform"),
@@ -56,9 +56,12 @@ class Level extends Game {
     this.addGameObject(new Enemy(2 * (platformWidth + gap) + 50, this.canvas.height - 90));
 
     // Create collectibles and add them to the game
-    this.addGameObject(new Collectible(250, this.canvas.height - 100, 20, 20));
-    this.addGameObject(new Collectible(450, this.canvas.height - 100, 20, 20));
-    this.addGameObject(new Collectible(650, this.canvas.height - 100, 20, 20));
+    this.addGameObject(new Collectible(250, this.canvas.height - 800, 50, 20));
+    this.addGameObject(new Collectible(450, this.canvas.height - 800, 50, 20));
+    this.addGameObject(new Collectible(650, this.canvas.height - 800, 50, 20));
+
+    // this.addGameObject(new Collectible(450, - 900, - 800, 50, 20));
+
   }
   
 }

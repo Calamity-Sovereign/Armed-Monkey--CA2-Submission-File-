@@ -17,6 +17,10 @@ class Player extends GameObject {
     this.renderer = new Renderer('blue', 100, 100, Images.player); // Add renderer
     this.addComponent(this.renderer);
     this.addComponent(new Physics({ x: 0, y: 0 }, { x: 0, y: 0 })); // Add physics
+    this.canDash = true;
+    this.dashCool = 0;
+    this.dashCool2 = 0;
+    this.dashSpeed = -650;
     this.addComponent(new Input()); // Add input for handling user input
     // Initialize all the player specific properties
     this.direction = 1;
@@ -49,6 +53,10 @@ class Player extends GameObject {
     } else if (!this.isGamepadMovement) {
       physics.velocity.x = 0;
     }
+
+    //ida's code 
+    this.dashForward(deltaTime,input,physics);
+
 
     // Handle player jumping
     if (!this.isGamepadJump && input.isKeyDown('ArrowUp') && this.isOnPlatform) {
@@ -90,8 +98,23 @@ class Player extends GameObject {
       }
     }
   
+// Handle collisions with platforms
+    // this.isOnPlatform = false;  // Reset this before checking collisions with platforms
+    // const platforms = this.game.gameObjects.filter((obj) => obj instanceof Platform);
+    // for (const platform of platforms) {
+    //   if (physics.isColliding(platform.getComponent(Physics))) {
+    //     if (!this.isJumping) {
+    //       physics.velocity.y = 0;
+    //       physics.acceleration.y = 0;
+    //       this.y = platform.y - this.renderer.height;
+    //       this.isOnPlatform = true;
+    //     }
+    //   }
+    // }
+  
+
     // Check if player has fallen off the bottom of the screen
-    if (this.y > this.game.canvas.height) {
+    if (this.y > 1100) {
       this.resetPlayerState();
     }
 
@@ -151,6 +174,18 @@ class Player extends GameObject {
       this.jumpTimer = this.jumpTime;
       this.getComponent(Physics).velocity.y = -this.jumpForce;
       this.isOnPlatform = false;
+    }
+  }
+
+  dashForward(deltaTime,input,physics){
+    if(this.canDash && input.isKeyDown("Space")&& this.dashCool<=0 && this.dashCool2<=0){
+      this.dashCool = 0.5;
+    }else if(this.dashCool>0){
+      this.dashCool-=deltaTime;
+      physics.velocity.x = -this.dashSpeed*this.direction; //this ensures the dash works
+      this.dashCool2=1;
+    } else if(this.dashCool2>0){
+      this.dashCool2-=deltaTime;
     }
   }
   
