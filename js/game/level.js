@@ -51,7 +51,7 @@ class Level extends Game {
    
     this.addGameObject(new Enemy(1700, 750 , 50, 60));
     this.addGameObject(new Enemy(2300, 750 , 50, 60));
-    this.addGameObject(new Enemy(2800, 750 , 50, 60));
+    this.addGameObject(new Enemy(2200, 750 , 50, 60));
 
 
 
@@ -69,16 +69,12 @@ class Level extends Game {
     this.addGameObject(new Collectible(2200, this.canvas.height - 800, 50, 20));//seventh
     this.addGameObject(new Collectible(2550, this.canvas.height - 800, 50, 20));//eight
     this.addGameObject(new Collectible(2950, this.canvas.height - 500, 50, 20));//nine
-    //this.addGameObject(new Collectible(2000, 800 , 50, 20));//ten
+    this.addGameObject(new Collectible(1800, 750 , 50, 20));//ten
 
     //Finishes game and restarts the level - Pigeon
     
     this.addGameObject(new Pigeon(1800, 750 , 50, 60));//ten
-
-
-
-
-    // this.addGameObject(new Collectible(450, - 900, - 800, 50, 20));
+    
 
   }
   

@@ -124,8 +124,8 @@ class Player extends GameObject {
     }
 
     // Check if player has collected all collectibles
-    if (this.score >= 9) {
-      console.log('You win!');
+    if (this.score >= 10) {
+      console.log('You got all the gold and saved your pigeon - You win!');
       location.reload();
     }
 
@@ -218,7 +218,7 @@ class Player extends GameObject {
 
   emitCollectParticles() {
     // Create a particle system at the player's position when a collectible is collected
-    const particleSystem = new ParticleSystem(this.x, this.y, 'yellow', 20, 1, 0.5);
+    const particleSystem = new ParticleSystem(this.x, this.y, 'yellow', 20, 100, 0.5);
     this.game.addGameObject(particleSystem);
   }
 
