@@ -74,6 +74,7 @@ class Level extends Game {
     //Finishes game and restarts the level - Pigeon
     
     this.addGameObject(new Pigeon(1800, 750 , 50, 60));//ten
+
     
 
   }
